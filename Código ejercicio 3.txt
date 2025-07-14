@@ -1,0 +1,33 @@
+// C++ code
+// Segundo Parcial Jorge Huerta
+
+// Pines del led 
+#define ledred 10
+
+// Pin del sensor de luz (debe ser analógico)
+#define lrd A0
+
+void setup(){
+  pinMode(ledred, OUTPUT);
+  Serial.begin(9600); // Muestra el valor de lrd
+}
+
+void loop(){
+  int luz = analogRead(lrd); // Lee la luz (0 a 1023)
+  
+  Serial. println(luz); // Muestra el valor en el monitor serial
+  
+  if(luz >= 500){
+    // Mucha luz - led apagado
+    analogWrite(ledred, 0);
+    
+  } else {
+    // Oscuridad - rojo 
+    analogWrite(ledred, 80);
+    
+  }
+  
+  delay(500); // Espera de medio segundo
+}
+  
+El mensaje lo que no supe cómmo poner profe jaja. Espero que me consideres igual

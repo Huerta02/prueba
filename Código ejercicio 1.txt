@@ -1,0 +1,20 @@
+// C++ code
+// Segundo Parcial Jorge Huerta
+
+#define PIR 2
+#define LED 13
+void setup()
+{
+  pinMode(PIR, INPUT);
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+}
+
+void loop()
+{
+  if(digitalRead(PIR)==HIGH){
+  	digitalWrite(LED, HIGH);
+  	delay(5000); 
+  	digitalWrite(LED, LOW);
+  }
+}

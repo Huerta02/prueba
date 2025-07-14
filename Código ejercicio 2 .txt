@@ -1,0 +1,21 @@
+// C++ code
+// Segundo Parcial Jorge Huerta
+
+// Definimos los pines boton y buzzer
+const int botonPin = 2;
+const int buzzerPin = 12;
+
+void setup() {
+  pinMode(botonPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(botonPin) == LOW) {
+    digitalWrite(buzzerPin, HIGH);
+    Serial.println("¡Alarma activada!");
+    delay(2000); // Espera 2 segundos con la alarma activada y luego se vuelve a reiniciar
+    digitalWrite(buzzerPin, LOW);
+  }
+}
